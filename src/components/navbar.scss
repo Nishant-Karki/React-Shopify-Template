@@ -1,0 +1,18 @@
+img {
+  margin-top: 0.2rem;
+  margin-right: 1rem;
+}
+
+.nav-link {
+  color: black;
+  font-size: 14px;
+  font-weight: normal;
+
+  &:hover {
+    color: blue;
+  }
+}
+
+.nav-icons {
+  font-size: 20px;
+}

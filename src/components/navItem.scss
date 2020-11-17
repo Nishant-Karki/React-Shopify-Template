@@ -1,0 +1,11 @@
+img {
+  margin-top: 0.4rem;
+}
+
+.nav-link {
+  color: black;
+
+  &:hover {
+    color: blue;
+  }
+}

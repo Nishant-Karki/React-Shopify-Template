@@ -1,0 +1,12 @@
+img {
+  margin-top: 0.4rem;
+}
+
+.nav-link {
+  color: black;
+}
+
+.nav-link:hover {
+  color: blue;
+}
+/*# sourceMappingURL=navItem.css.map */

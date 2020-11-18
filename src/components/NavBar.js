@@ -1,17 +1,21 @@
-import { AppBar, Container, Paper } from "@material-ui/core";
-import React from "react";
-import logo from "../assets/logo.png";
-import "./navbar.css";
+import React, { useState } from "react";
 
+import "./navbar.css";
+import NavDrawer from "./NavDrawer";
+import logo from "../assets/logo.png";
+
+import { AppBar, Container, Paper, Drawer } from "@material-ui/core";
 import { Link } from "react-router-dom";
 
-import { BsSearch } from "react-icons/bs";
-import { HiOutlineShoppingBag } from "react-icons/hi";
-import { AiOutlineUser } from "react-icons/ai";
-import { BiSlider } from "react-icons/bi";
 import { CgMenu } from "react-icons/cg";
+import { NavItems, NavIcons } from "./NavItems";
 
 function NavBar() {
+  const [open, setOpen] = useState(false);
+
+  const handleDrawer = () => {
+    setOpen(true);
+  };
   return (
     <>
       <AppBar
@@ -20,74 +24,22 @@ function NavBar() {
         color="inherit"
       >
         <Container className="d-flex justify-content-between pr-2">
-          <button className="navbar-toggler">
+          <button className="navbar-toggler" onClick={handleDrawer}>
             <CgMenu />
           </button>
           <div class="collapse navbar-collapse">
-            <ul className="nav ">
-              <Link to="/">
-                <img src={logo} alt="Logo" width="100" height="20" />
-              </Link>
-              <li className="nav-item">
-                <Link className="nav-link" to="/">
-                  HOME
-                </Link>
-              </li>
-              <li className="nav-item">
-                <Link className="nav-link" to="/">
-                  SHOP
-                </Link>
-              </li>
-              <li className="nav-item">
-                <Link className="nav-link" to="/">
-                  PAGES
-                </Link>
-              </li>
-              <li className="nav-item">
-                <Link className="nav-link" to="/">
-                  BLOG
-                </Link>
-              </li>
-              <li className="nav-item">
-                <Link className="nav-link" to="/">
-                  PORTFOLIO
-                </Link>
-              </li>
-              <li className="nav-item">
-                <Link className="nav-link" to="/">
-                  SNOWBOARDS
-                </Link>
-              </li>
-              <li className="nav-item">
-                <Link className="nav-link" to="/">
-                  BUY THEME
-                </Link>
-              </li>
-            </ul>
+            <Link to="/">
+              <img
+                src={logo}
+                alt="Logo"
+                width="100"
+                style={{ marginTop: "-0.4rem", marginRight: "0.4rem" }}
+              />
+            </Link>
+            <NavItems display="nav" />
           </div>
           <div>
-            <ul className="nav">
-              <li className="nav-item">
-                <Link className="nav-link" to="/">
-                  <BsSearch size={20} />
-                </Link>
-              </li>
-              <li className="nav-item">
-                <Link className="nav-link" to="/">
-                  <HiOutlineShoppingBag size={20} />
-                </Link>
-              </li>
-              <li className="nav-item">
-                <Link className="nav-link" to="/">
-                  <AiOutlineUser size={20} />
-                </Link>
-              </li>
-              <li className="nav-item">
-                <Link className="nav-link" to="/">
-                  <BiSlider size={20} />
-                </Link>
-              </li>
-            </ul>
+            <NavIcons />
           </div>
         </Container>
       </AppBar>
@@ -104,6 +56,9 @@ function NavBar() {
           <img src={logo} alt="Logo" width="100" height="20" className="mt-0" />
         </Link>
       </Paper>
+      <Drawer anchor="left" open={open} onClose={() => setOpen(false)}>
+        <NavDrawer />
+      </Drawer>
     </>
   );
 }

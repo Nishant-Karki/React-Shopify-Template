@@ -1,7 +1,6 @@
 import React from "react";
 import "./navItem.css";
 
-import { Menu, MenuItem } from "@material-ui/core";
 import { Link } from "react-router-dom";
 import { BsSearch } from "react-icons/bs";
 import { HiOutlineShoppingBag } from "react-icons/hi";
@@ -20,14 +19,6 @@ const NavLink = ({ children, linkTo, icon = false }) => {
           </span>
         )}
       </Link>
-      <Menu
-        style={{ width: 100, height: 100 }}
-        id="simple-menu"
-        keepMounted
-        open={}
-      >
-        <MenuItem>Logout</MenuItem>
-      </Menu>
     </li>
   );
 };

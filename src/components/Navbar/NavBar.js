@@ -2,9 +2,9 @@ import React, { useState } from "react";
 
 import "./navbar.css";
 import NavDrawer from "./NavDrawer";
-import logo from "../assets/logo.png";
+import logo from "../../assets/img/logo.png";
 
-import { AppBar, Container, Paper, Drawer } from "@material-ui/core";
+import { AppBar, Container, Drawer } from "@material-ui/core";
 import { Link } from "react-router-dom";
 
 import { CgMenu } from "react-icons/cg";
@@ -15,6 +15,10 @@ function NavBar() {
 
   const handleDrawer = () => {
     setOpen(true);
+  };
+
+  const handleClose = () => {
+    setOpen(false);
   };
   return (
     <>
@@ -43,21 +47,21 @@ function NavBar() {
           </div>
         </Container>
       </AppBar>
-      <Paper
+      <div
         className="d-lg-none "
         style={{
           alignItems: "center",
           display: "flex",
           justifyContent: "center",
-          minHeight: "3.4rem",
+          minHeight: "3rem",
         }}
       >
         <Link to="/">
-          <img src={logo} alt="Logo" width="100" height="20" className="mt-0" />
+          <img src={logo} alt="Logo" width="100" height="20" className="mt-1" />
         </Link>
-      </Paper>
-      <Drawer anchor="left" open={open} onClose={() => setOpen(false)}>
-        <NavDrawer />
+      </div>
+      <Drawer anchor="left" open={open} onClose={handleClose}>
+        <NavDrawer onClose={handleClose} />
       </Drawer>
     </>
   );

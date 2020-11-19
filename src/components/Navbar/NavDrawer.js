@@ -8,15 +8,16 @@ const useStyles = makeStyles({
   root: {
     width: 260,
     paddingTop: " 1rem",
+    cursor: "pointer",
   },
   navItem: { listStyle: "none", paddingLeft: "0" },
 });
 
-function NavDrawer() {
+function NavDrawer(props) {
   const classes = useStyles();
 
   return (
-    <Container className={classes.root}>
+    <Container className={classes.root} onClick={props.onClose}>
       <AiOutlineClose
         style={{
           fontSize: 14,

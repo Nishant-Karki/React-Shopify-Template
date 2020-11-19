@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-import "./navbar.css";
+import "./navbar.scss";
 import NavDrawer from "./NavDrawer";
 import logo from "../../assets/img/logo.png";
 

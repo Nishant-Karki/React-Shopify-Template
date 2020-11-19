@@ -1,114 +1,75 @@
-import { Container, Grid, makeStyles } from "@material-ui/core";
+import { Container, Grid } from "@material-ui/core";
 import React from "react";
 
 import { FaFacebookF } from "react-icons/fa";
 import { FiTwitter } from "react-icons/fi";
 import { AiOutlineInstagram } from "react-icons/ai";
 import { GrPinterest } from "react-icons/gr";
-
-const useStyles = makeStyles({
-  footerIcons: {
-    marginRight: "1rem",
-    color: "white",
-    fontSize: "14px",
-  },
-  listStyle: { listStyle: "none", paddingLeft: "0", fontSize: "14px" },
-});
+import "./footer.scss";
 
 function Footer() {
-  const classes = useStyles();
   return (
     <>
-      <Container
-        className="d-none d-md-flex "
-        style={{
-          backgroundColor: "purple",
-          height: "2.6rem",
-          alignItems: "center",
-          paddingLeft: "7rem",
-          justifyContent: "center",
-        }}
-      >
-        <Grid container spacing={1}>
-          <Grid md={3} className="text-white">
+      <div className="d-none d-md-flex joinus-container ">
+        <Grid container>
+          <Grid md={4} className="text-white" style={{ paddingLeft: "16%" }}>
             BE IN TOUCH WITH US
           </Grid>
-          <Grid md={4}>
+          <Grid md={4} style={{ paddingLeft: "2rem" }}>
             {" "}
             <div className="input-group  ">
               <input
-                style={{ height: "1.5rem", fontSize: "10px" }}
                 type="text"
-                className="form-control"
-                placeholder="Input group example"
-                aria-label="Input group example"
-                aria-describedby="btnGroupAddon"
+                className="form-control join-us"
+                placeholder="Email Id"
               />
               <div className="input-group-prepend">
-                <div
-                  className=" input-group-text"
-                  style={{ height: "1.5rem", fontSize: "10px" }}
-                  id="btnGroupAddon"
-                >
+                <div className=" input-group-text join-us" id="btnGroupAddon">
                   JOIN US
                 </div>
               </div>
             </div>
           </Grid>
-          <Grid md={4} className="ml-auto ">
-            <FaFacebookF
-              className={classes.footerIcons}
-              style={{
-                marginLeft: "5rem",
-                marginRight: "1rem",
-                color: "white",
-              }}
-            />
-            <FiTwitter className={classes.footerIcons} />
-            <AiOutlineInstagram className={classes.footerIcons} />
-            <GrPinterest className={classes.footerIcons} />
+          <Grid md={3}>
+            <FaFacebookF className="footer-icons fb" />
+            <FiTwitter className="footer-icons" />
+            <AiOutlineInstagram className="footer-icons" />
+            <GrPinterest className="footer-icons" />
           </Grid>
         </Grid>
-      </Container>
-      <Container
-        style={{
-          backgroundColor: "grey",
-          height: "16rem",
-          paddingLeft: "7rem",
-          paddingTop: "1.6rem",
-        }}
-      >
-        <Grid container>
-          <Grid xs={12} sm={6} md={3}>
+      </div>
+      <div className="category-container">
+        <Grid container className="first-grid">
+          <Grid xs={12} sm={6} md={2}>
             CATEGORIES
-            <ul className={classes.listStyle}>
+            <ul className="listStyle">
               <li>Women</li>
               <li>Men</li>
               <li>Accessories</li>
               <li>New Arrivals</li>
             </ul>
           </Grid>
-          <Grid xs={12} sm={6} md={3}>
+          <Grid xs={12} sm={6} md={2}>
             BUY WITH US
-            <ul className={classes.listStyle}>
+            <ul className="listStyle">
               <li>Women</li>
               <li>Men</li>
               <li>Accessories</li>
               <li>New Arrivals</li>
             </ul>
           </Grid>
-          <Grid xs={12} sm={6} md={3}>
+          <Grid xs={12} sm={6} md={2}>
             ABOUT
-            <ul className={classes.listStyle}>
+            <ul className="listStyle">
               <li>Women</li>
               <li>Men</li>
               <li>Accessories</li>
               <li>New Arrivals</li>
             </ul>
           </Grid>
-          <Grid xs={12} sm={6} md={3}>
+          <Grid xs={12} sm={6} md={2}>
             CONTACT US
-            <ul className={classes.listStyle}>
+            <ul className="listStyle">
               <li>Women</li>
               <li>Men</li>
               <li>Accessories</li>
@@ -116,7 +77,7 @@ function Footer() {
             </ul>
           </Grid>
         </Grid>
-      </Container>
+      </div>
     </>
   );
 }

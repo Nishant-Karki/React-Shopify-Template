@@ -1,0 +1,10 @@
+.button {
+  color: black;
+  font-weight: bold;
+  background-color: #fff;
+
+  &:hover {
+    color: white;
+    background-color: purple;
+  }
+}

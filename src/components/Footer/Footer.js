@@ -1,4 +1,4 @@
-import { Container, Grid } from "@material-ui/core";
+import { Grid } from "@material-ui/core";
 import React from "react";
 
 import { FaFacebookF } from "react-icons/fa";
@@ -12,10 +12,15 @@ function Footer() {
     <>
       <div className="d-none d-md-flex joinus-container ">
         <Grid container>
-          <Grid md={4} className="text-white" style={{ paddingLeft: "16%" }}>
+          <Grid
+            item
+            md={4}
+            className="text-white"
+            style={{ paddingLeft: "16%" }}
+          >
             BE IN TOUCH WITH US
           </Grid>
-          <Grid md={4} style={{ paddingLeft: "2rem" }}>
+          <Grid item md={4} style={{ paddingLeft: "2rem" }}>
             {" "}
             <div className="input-group  ">
               <input
@@ -30,7 +35,7 @@ function Footer() {
               </div>
             </div>
           </Grid>
-          <Grid md={3}>
+          <Grid item md={3}>
             <FaFacebookF className="footer-icons fb" />
             <FiTwitter className="footer-icons" />
             <AiOutlineInstagram className="footer-icons" />
@@ -40,7 +45,7 @@ function Footer() {
       </div>
       <div className="category-container">
         <Grid container className="first-grid">
-          <Grid xs={12} sm={6} md={2}>
+          <Grid item xs={12} sm={6} md={2}>
             CATEGORIES
             <ul className="listStyle">
               <li>Women</li>
@@ -49,7 +54,7 @@ function Footer() {
               <li>New Arrivals</li>
             </ul>
           </Grid>
-          <Grid xs={12} sm={6} md={2}>
+          <Grid item xs={12} sm={6} md={2}>
             BUY WITH US
             <ul className="listStyle">
               <li>Women</li>
@@ -58,7 +63,7 @@ function Footer() {
               <li>New Arrivals</li>
             </ul>
           </Grid>
-          <Grid xs={12} sm={6} md={2}>
+          <Grid item xs={12} sm={6} md={2}>
             ABOUT
             <ul className="listStyle">
               <li>Women</li>
@@ -67,7 +72,7 @@ function Footer() {
               <li>New Arrivals</li>
             </ul>
           </Grid>
-          <Grid xs={12} sm={6} md={2}>
+          <Grid item xs={12} sm={6} md={2}>
             CONTACT US
             <ul className="listStyle">
               <li>Women</li>

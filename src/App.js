@@ -7,7 +7,9 @@ import { BrowserRouter } from "react-router-dom";
 import CarouselComp from "./components/Carousel/CarouselComp";
 import Footer from "./components/Footer/Footer";
 import Category from "./components/Category/Category";
-import Products from "./components/Products/Products";
+import Offers from "./components/Offers/Offers";
+import ParallaxComp from "./components/Parallax/ParallaxComp";
+import SliderComp from "./components/Products/SliderComp";
 
 function App() {
   return (
@@ -15,7 +17,9 @@ function App() {
       <NavBar />
       <CarouselComp />
       <Category />
-      <Products />
+      <ParallaxComp />
+      <SliderComp />
+      <Offers />
       <Footer />
     </BrowserRouter>
   );

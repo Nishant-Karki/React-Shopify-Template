@@ -25,6 +25,8 @@ const useStyles = makeStyles({
     color: "black",
     fontWeight: "bold",
     backgroundColor: "#fff",
+    minWidth: "8rem",
+    minHeight: "3rem",
 
     "&:hover": {
       color: "white",

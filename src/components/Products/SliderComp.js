@@ -5,12 +5,19 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
 import { FcPrevious, FcNext } from "react-icons/fc";
+import { BsStar } from "react-icons/bs";
 
 import first from "../../assets/img/orange-jacket.jpg";
+import second from "../../assets/img/purple-helmet.jpg";
+import third from "../../assets/img/light-green-helmet.jpg";
+import fourth from "../../assets/img/burton boa.jpg";
+import fifth from "../../assets/img/selrus binding.jpg";
+import sixth from "../../assets/img/asylum pant.jpg";
 
 import "./sliderComp.scss";
+import { Typography } from "@material-ui/core";
 
-function PrevArrow(props) {
+function PrevArrow({ currentSlide, slideCount, ...props }) {
   return (
     <FcPrevious
       {...props}
@@ -23,7 +30,7 @@ function PrevArrow(props) {
   );
 }
 
-function NextArrow(props) {
+function NextArrow({ currentSlide, slideCount, ...props }) {
   return (
     <FcNext
       {...props}
@@ -36,19 +43,41 @@ function NextArrow(props) {
   );
 }
 
-const Images = (props) => {
+const Images = ({ src, children }) => {
   return (
-    <div style={{ height: 280, backgroundColor: "black" }}>
-      <img src={first} alt="product-carousel" width="100%" />
+    <div className="product-image" style={{ minHeight: 255 }}>
+      <img src={src} alt="product-carousel" width="100%" />
+      <div className="product-hover">
+        <div>
+          <div>
+            <Typography variant="overline">ANALOG</Typography>
+            <Typography variant="subtitle2">
+              <BsStar />
+              <BsStar />
+              <BsStar />
+              <BsStar />
+              <BsStar />
+            </Typography>
+            <Typography variant="subtitle1">AK 2L GORE</Typography>
+            <Typography>$190.00</Typography>
+          </div>
+          <div className="mini-image-outer-container">{children}</div>
+          <div className="button-container">
+            <div className="add-btn">ADD TO CART</div>
+          </div>
+        </div>
+      </div>
     </div>
   );
 };
 
-// const ProductContent = () => {
-//   return (
-
-//   );
-// };
+const MiniImages = ({ src }) => {
+  return (
+    <div className="mini-image-inner-container">
+      <img src={src} alt="product" width="100%" style={{ margin: "0px" }} />
+    </div>
+  );
+};
 
 function SliderComp() {
   const settings = {
@@ -65,12 +94,10 @@ function SliderComp() {
         settings: {
           slidesToShow: 3,
           slidesToScroll: 3,
-          infinite: true,
-          dots: true,
         },
       },
       {
-        breakpoint: 730,
+        breakpoint: 800,
         settings: {
           slidesToShow: 2,
           slidesToScroll: 2,
@@ -80,16 +107,40 @@ function SliderComp() {
     ],
   };
   return (
-    <div style={{ padding: 28 }}>
+    <div style={{ paddingLeft: 28, paddingRight: 28 }}>
       <Slider {...settings}>
-        <Images></Images>
-        <Images></Images>
-        <Images></Images>
-        <Images></Images>
-        <Images></Images>
-        <Images></Images>
-        <Images></Images>
-        <Images></Images>
+        <Images src={first}>
+          <MiniImages src={first} />
+          <MiniImages src={first} />
+        </Images>
+        <Images src={second}>
+          <MiniImages src={second} />
+          <MiniImages src={second} />
+        </Images>
+        <Images src={third}>
+          <MiniImages src={third} />
+          <MiniImages src={third} />
+        </Images>
+        <Images src={fourth}>
+          <MiniImages src={fourth} />
+          <MiniImages src={fourth} />
+        </Images>
+        <Images src={fifth}>
+          <MiniImages src={fifth} />
+          <MiniImages src={fifth} />
+        </Images>
+        <Images src={sixth}>
+          <MiniImages src={sixth} />
+          <MiniImages src={sixth} />
+        </Images>
+        <Images src={third}>
+          <MiniImages src={third} />
+          <MiniImages src={third} />
+        </Images>
+        <Images src={fifth}>
+          <MiniImages src={fifth} />
+          <MiniImages src={fifth} />
+        </Images>
       </Slider>
     </div>
   );

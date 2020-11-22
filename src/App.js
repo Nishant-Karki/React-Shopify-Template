@@ -10,6 +10,7 @@ import Category from "./components/Category/Category";
 import Offers from "./components/Offers/Offers";
 import ParallaxComp from "./components/Parallax/ParallaxComp";
 import SliderComp from "./components/Products/SliderComp";
+import Products from "./components/Products/Products";
 
 function App() {
   return (
@@ -17,9 +18,11 @@ function App() {
       <NavBar />
       <CarouselComp />
       <Category />
+      <Products />
       <ParallaxComp />
-      <SliderComp />
+      <Products />
       <Offers />
+
       <Footer />
     </BrowserRouter>
   );

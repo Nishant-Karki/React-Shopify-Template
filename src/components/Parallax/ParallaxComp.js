@@ -6,13 +6,19 @@ import image from "../../assets/img/parallax-img.jpg";
 
 function ParallaxComp() {
   return (
-    <Parallax
-      bgImage={image}
-      bgImageStyle={{ height: 880, width: "100%" }}
-      strength={500}
-    >
-      <div style={{ height: 670, width: 100 }}></div>
-    </Parallax>
+    <>
+      <div style={{ width: "100%" }} className="d-flex d-lg-none">
+        <img src={image} alt="parallax" width="100%" height="" />
+      </div>
+      <Parallax
+        className="d-none d-lg-flex"
+        bgImage={image}
+        bgImageStyle={{ height: 880, width: "100%" }}
+        strength={500}
+      >
+        <div style={{ height: 670, width: 100 }}></div>
+      </Parallax>
+    </>
   );
 }
 

@@ -1,4 +1,4 @@
-import { Grid, Box, makeStyles, Button } from "@material-ui/core";
+import { Grid, Box, makeStyles, Button, Typography } from "@material-ui/core";
 import React from "react";
 
 import first from "../../assets/img/boards-gif.gif";
@@ -16,11 +16,7 @@ const useStyles = makeStyles({
     alignItems: "flex-end",
     justifyContent: "center",
   },
-  image: {
-    "&:hover": {
-      cursor: "pointer",
-    },
-  },
+
   buttons: {
     color: "black",
     fontWeight: "bold",
@@ -30,12 +26,42 @@ const useStyles = makeStyles({
 
     "&:hover": {
       color: "white",
-      backgroundColor: "purple",
+      backgroundColor: "#b004e2",
+    },
+  },
+  image: {
+    cursor: "pointer",
+  },
+  box: {
+    backgroundColor: "white",
+    position: "absolute",
+    width: "22%",
+    height: "15%",
+    borderRadius: "0.3rem",
+    opacity: "0.9",
+    marginBottom: "9.5%",
+    display: "flex",
+    justifyContent: "center",
+    alignItems: "center",
+    textAlign: "center",
+    transition: "height 0.8s, width 0.8s, marginBottom 0.8s",
+    "&:hover": {
+      width: "23%",
+      height: "17%",
+      marginBottom: "9.2%",
     },
   },
 });
 
-export const Content = ({ src, md = 3, btnName, btn = false }) => {
+export const Content = ({
+  src,
+  md = 3,
+  btnName,
+  btn = false,
+  box = false,
+  boxName,
+  boxSubName,
+}) => {
   const classes = useStyles();
   return (
     <Grid item sm={6} md={md}>
@@ -50,6 +76,19 @@ export const Content = ({ src, md = 3, btnName, btn = false }) => {
             }}
           >
             <Button className={classes.buttons}>{btnName}</Button>
+          </div>
+        )}
+
+        {box && (
+          <div className={classes.box}>
+            <Typography variant="subtitle2">
+              {boxName}
+              <br />
+
+              <Typography variant="h5" style={{ fontWeight: "bold" }}>
+                {boxSubName}
+              </Typography>
+            </Typography>
           </div>
         )}
       </Box>
@@ -71,13 +110,13 @@ function Category() {
           src={fifth}
           md={6}
           btn={true}
-          btnName="MEN'S SNOWBOARD CLOTHING"
+          btnName="WOMEN'S SNOWBOARD CLOTHING"
         />
         <Content
           src={sixth}
           md={6}
           btn={true}
-          btnName="WOMEN'S SNOWBOARD CLOTHING"
+          btnName="MEN'S SNOWBOARD CLOTHING"
         />
       </Grid>
     </>

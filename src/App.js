@@ -9,8 +9,8 @@ import Footer from "./components/Footer/Footer";
 import Category from "./components/Category/Category";
 import Offers from "./components/Offers/Offers";
 import ParallaxComp from "./components/Parallax/ParallaxComp";
-import SliderComp from "./components/Products/SliderComp";
 import Products from "./components/Products/Products";
+import Brand from "./components/BrandSlider/Brand";
 
 function App() {
   return (
@@ -22,7 +22,7 @@ function App() {
       <ParallaxComp />
       <Products />
       <Offers />
-
+      <Brand />
       <Footer />
     </BrowserRouter>
   );

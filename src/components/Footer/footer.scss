@@ -1,9 +1,14 @@
 .footer-icons {
-  margin-right: 1rem;
   color: white;
+  float: right;
+  margin-right: 5%;
+  font-size: 20px;
+}
+.footer-icons-container {
+  padding-right: 2%;
 }
 .joinus-container {
-  background-color: purple;
+  background-color: #b004e2;
   height: 3.3rem;
   align-items: center;
   justify-content: center;
@@ -16,21 +21,23 @@
   font-size: 14px;
 }
 
-.fb {
-  margin-left: 4.4rem;
-}
-
 .category-container {
-  background-color: lightgrey;
+  background-color: #f7f8fa;
   min-height: 10rem;
   padding-top: 1.6rem;
-}
-.first-grid {
-  padding-left: 26%;
 }
 
 .listStyle {
   list-style: none;
   padding-left: 0;
   font-size: 14px;
+  li {
+    margin-bottom: 2%;
+  }
+}
+
+.payment-photo {
+  img {
+    padding-left: 2%;
+  }
 }

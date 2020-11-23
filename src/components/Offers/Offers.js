@@ -8,8 +8,20 @@ import { Grid } from "@material-ui/core";
 function Offers() {
   return (
     <Grid container>
-      <Content src={first} md={6} btn={true} btnName="NEW SNOWBOARDS" />
-      <Content src={second} md={6} btn={true} btnName="CLEARANCE SALE" />
+      <Content
+        src={second}
+        md={6}
+        box={true}
+        boxName="NEW IN:"
+        boxSubName="SNOWBOARDS"
+      />
+      <Content
+        src={first}
+        md={6}
+        box={true}
+        boxName="CLEARANCE SALES"
+        boxSubName="GET UP TO 50% OFF"
+      />
     </Grid>
   );
 }
